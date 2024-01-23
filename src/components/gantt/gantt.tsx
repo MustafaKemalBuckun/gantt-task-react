@@ -115,9 +115,6 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
     let newDates = seedDates(startDate, endDate, viewMode);
     if (rtl) {
       newDates = newDates.reverse();
-      if (scrollX === -1) {
-        setScrollX(newDates.length * columnWidth);
-      }
     }
     setDateSetup({ dates: newDates, viewMode });
     setBarTasks(
@@ -162,7 +159,6 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
     milestoneBackgroundColor,
     milestoneBackgroundSelectedColor,
     rtl,
-    scrollX,
     onExpanderClick,
   ]);
 
